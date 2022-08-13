@@ -10,6 +10,6 @@ COPY Gemfile Gemfile.lock /aws-api/
 RUN bundle install
 RUN bundle install --without test development
 COPY . /aws-api
-RUN mkdir /aws-api/tmp/pids
+RUN mkdir -p /aws-api/tmp/sockets /aws-api/tmp/pids
 
-CMD bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+CMD bash -c "bundle exec puma -C config/puma.rb"
