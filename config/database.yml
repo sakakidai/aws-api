@@ -42,5 +42,6 @@ test:
 production:
   <<: *default
   database: aws_api_production
-  username: aws_api
-  password: <%= ENV["AWS_API_DATABASE_PASSWORD"] %>
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
