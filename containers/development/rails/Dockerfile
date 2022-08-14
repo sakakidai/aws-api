@@ -1,5 +1,7 @@
 FROM ruby:3.1.2
 
+RUN apt-get update && apt-get install -y build-essential libpq-dev vim net-tools iproute2
+
 ENV LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
     BUNDLE_PATH=vendor/bundle
