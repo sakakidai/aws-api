@@ -41,7 +41,7 @@ test:
 #
 production:
   <<: *default
-  database: aws_api_production
-  host: <%= ENV['DB_HOST'] %>
-  username: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= Rails.application.credentials.config.dig(:psql, :database) %>
+  host: <%= Rails.application.credentials.config.dig(:psql, :host) %>
+  username: <%= Rails.application.credentials.config.dig(:psql, :user) %>
+  password: <%= Rails.application.credentials.config.dig(:psql, :password) %>

@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y build-essential libpq-dev vim net-tools
 
 ENV LANG=C.UTF-8 \
     TZ=Asia/Tokyo \
-    BUNDLE_PATH=vendor/bundle
+    BUNDLE_PATH=vendor/bundle \
+    EDITOR=vi
 
 WORKDIR /aws-api
 RUN gem install bundler
